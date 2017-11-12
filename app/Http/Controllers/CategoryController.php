@@ -8,12 +8,21 @@ use App\Http\Requests;
 
 class CategoryController extends Controller
 {
-    public function index(){
+   /* public function index(){
+        //return 'Lista de cats';
+        return view('cats.index');
+    }*/
+
+    public function getIndex(){
         //return 'Lista de cats';
         return view('cats.index');
     }
 
     public function create(){
+        return 'Form nova cat';
+    }
+
+    public function getCreate(){
         return 'Form nova cat';
     }
 
