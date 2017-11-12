@@ -11,12 +11,13 @@
 |
 */
 
-Route::group(['prefix' => 'categorias'], function (){
-    Route::get('/listar',['uses' => 'CategoryController@index']);
-    Route::get('/criar',['uses' => 'CategoryController@create']);
-    Route::post('/salvar',['uses' => 'CategoryController@store']);
-    Route::get('/{id}/editar',['uses' => 'CategoryController@edit']);
-    Route::post('/{id}/atualizar',['uses' => 'CategoryController@update']);
-    Route::get('/{id}/remover',['uses' => 'CategoryController@destroy']);
+Route::group(['as' => 'cats.','prefix' => 'categorias'], function (){
+    Route::get('',['as' => 'index', 'uses' => 'CategoryController@index']);
+    //Route::get('/criar',['as' => 'create', 'uses' => 'CategoryController@create']);
+    Route::get('/nova',['as' => 'create', 'uses' => 'CategoryController@create']);
+    Route::post('/salvar',['as' => 'store', 'uses' => 'CategoryController@store']);
+    Route::get('/{id}/editar',['as' => 'edit', 'uses' => 'CategoryController@edit']);
+    Route::post('/{id}/atualizar', ['as' => 'update','uses' => 'CategoryController@update']);
+    Route::get('/{id}/remover',['as' => 'destroy', 'uses' => 'CategoryController@destroy']);
 });
 
