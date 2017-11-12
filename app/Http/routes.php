@@ -11,7 +11,18 @@
 |
 */
 
-Route::controller('categorias', 'CategoryController');
+
+$configs = [
+    'getIndex' => 'cats.index',
+    'getCriar' => 'cats.create',
+    'getEditar' => 'cats.edit',
+    'getSalvar' => 'cats.store',
+    'getAtualizar' => 'cats.update',
+    'getRemover' => 'cats.destroy'
+
+];
+
+Route::controller('categorias', 'CategoryController', $configs);
 
 /*Route::group(['as' => 'cats.','prefix' => 'categorias'], function (){
     Route::get('',['as' => 'index', 'uses' => 'CategoryController@index']);

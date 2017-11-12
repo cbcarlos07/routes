@@ -13,6 +13,11 @@ class CategoryController extends Controller
         return view('cats.index');
     }*/
 
+   public function __construct()
+   {
+       $this->middleware('auth');
+   }
+
     public function getIndex(){
         //return 'Lista de cats';
         return view('cats.index');
